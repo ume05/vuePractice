@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>
+      {{message}}
+    </p>
+    <p>
+      {{number + 1}}
+    </p>
+    <p>
+      {{message.split('').reverse().join('')}}
+    </p>
+    <p>
+      {{ ok ? 'YES' : 'NO' }}
+    </p>
+    <p>
+      {{jpyPrice | toUSD | numberFormat}}
+    </p>
+    <h2>
+      v-bind
+    </h2>
+    <input type="text" v-bind:value="jpyPrice | toUSD | numberFormat">
+    <p>
+      {{text | readMore(50,'***')}}
+    </p>
+    <a :href="url">Link1</a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

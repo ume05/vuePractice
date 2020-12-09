@@ -1,0 +1,18 @@
+[v-cloak] {
+  display: none;
+}
+.large {
+  font-size: 30px;
+}
+
+.text-danger {
+  color: red!important;
+}
+
+.bg-gray {
+  background-color: gray;
+}
+
+.text-blue {
+  color: blue;
+}

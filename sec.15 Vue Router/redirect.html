@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Vue Router</title>
+</head>
+<body>
+  <div id="app">
+    <router-link to="/">Home</router-link>
+    <router-link to="/a">A</router-link>
+    <router-link to="/b">B</router-link>
+    <router-view></router-view>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router@3.4.9/dist/vue-router.min.js"></script>
+  <script>
+    const TempA = {
+      template: '<div>A</div>'
+    }
+    const TempB = {
+      template: '<div>B</div>'
+    }
+    const router = new VueRouter({
+      routes: [
+        {
+          path: '/a',
+          redirect: {
+            name: 'page-b'
+          },
+          component: TempA
+        },
+        {
+          path: '/b',
+          name: 'page-b',
+          component: TempB,
+        }
+      ]
+    })
+
+    const app = new Vue({
+      router: router
+    }).$mount('#app')
+  </script>
+</body>
+</html>

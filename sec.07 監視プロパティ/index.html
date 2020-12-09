@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>
+      <input type="text" v-model:value="km">km
+    </p>
+    <p>
+      <input type="text" v-model:value="m">m
+    </p>
+    <p>
+      <input type="text" v-model:value="mm">mm
+    </p>
+    <p>
+      firstName(computed): <input type="text" v-model:value="firstNameCo">
+    </p>
+    <p>
+      lastName(computed): <input type="text" v-model:value="lastNameCo">
+    </p>
+    <p>
+      fullName(computed): {{computedName}}
+    </p>
+    <p>
+      firstName(watch): <input type="text" v-model="firstNameWa">
+    </p>
+    <p>
+      lastName(watch): <input type="text" v-model="lastNameWa">
+    </p>
+    <p>
+      fullName(watch): {{firstNameWa}} {{lastNameWa}}
+    </p>
+    <ul>
+      <li v-for="color in colors">
+        {{color.name}}
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
